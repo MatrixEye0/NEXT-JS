@@ -3,6 +3,11 @@ import Navigation from "./Navigation";
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import {Roboto} from "next/font/google"; // import font 
+const robot = Roboto({ subsets: ["latin"], // it refer secific group of character like latin, cyrillic, greek etc in english we use latin for show english of europe if english in russian we use cyrillic 
+   weight: ["400", "700"], 
+   variable: "--font-roboto" });
+
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],
@@ -21,7 +26,7 @@ import "./globals.css";
 export default function RootLayout({ children }) {
   return (
     <html>
-      <body>
+      <body className={`${robot.variable} font-sans`}>
         <Navigation />
         {children}
       </body>
